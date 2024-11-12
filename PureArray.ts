@@ -30,7 +30,7 @@ function PureArray(length: number, type?: ZodSchema) {
         const indexProp: number = parseInt(prop.toString());
 
         if (type) {
-          const valueParse = type?.safeParse(newValue) || null;
+          const valueParse = type?.safeParse(newValue);
 
           if (valueParse?.success === false) {
             const issues: Record<string, string> = {};
